@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
     <head>
+    
         <title>Home page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
+    
     <body>
+    
         <h1>Contatos - Listar</h1>
+        
+        <table>
+        
+        	<thead>
+        		<tr>
+					<td>Nome</td>
+					<td>E-mail</td>
+					<td>Telefone</td>        		
+        		</tr>
+        	</thead>
+        		
+        	<tbody>
+        		<tr th:each="contato : ${contatos}">
+					<td th:text="${contato.nome}">Nome</td>
+					<td th:text="${contato.email}">E-mail</td>
+					<td th:text="${contato.telefone}">Telefone</td>        		
+        		</tr>
+        	</tbody>
+        
+        </table>
+        
     </body>
+    
 </html>
