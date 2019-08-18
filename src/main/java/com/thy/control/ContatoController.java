@@ -80,5 +80,18 @@ public class ContatoController {
 		return "redirect:/contatos/listar";
 		
 	}
+	
+
+	
+	@GetMapping("excluir/{id}")
+	public String excluir(@PathVariable Integer id) {
+		
+		Contato contato = contatoRepository.findById(id);
+		
+		contatoService.excluir(contato);
+		
+		return "redirect:/contatos/listar";
+		
+	}
 
 }

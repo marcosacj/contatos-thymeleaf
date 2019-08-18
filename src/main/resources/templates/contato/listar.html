@@ -35,8 +35,8 @@
 					<td th:text="${contato.ativo}">Ativo</td>
 					<td>
 						<a th:href="@{ 'editar/' + ${contato.id} }">Editar</a>
-						<a th:href="@{ 'desativar/' + ${contato.id} }">Desativar</a>
-						<div>Remover</div>
+						<a th:href="@{ 'desativar/' + ${contato.id} }" th:if="${contato.ativo}">Desativar</a>
+						<a th:href="@{ 'excluir/' + ${contato.id} }">Excluir</a>
 					</td>
         		</tr>
         	</tbody>
