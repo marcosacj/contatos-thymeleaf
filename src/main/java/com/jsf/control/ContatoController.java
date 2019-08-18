@@ -31,11 +31,6 @@ public class ContatoController {
 		
 	}
 	
-	@GetMapping("exibir")
-	public String exibir() {
-		return "contato/exibir";
-	}
-	
 	@GetMapping("listar")
 	public String listar(Model model) {
 		
