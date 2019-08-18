@@ -17,9 +17,11 @@
         
         	<thead>
         		<tr>
-					<td>Nome</td>
-					<td>E-mail</td>
-					<td>Telefone</td>        		
+					<td><b>Nome</b></td>
+					<td><b>E-mail</b></td>
+					<td><b>Telefone</b></td>
+					<td><b>Ativo</b></td>
+					<td><b>Opções</b></td>
         		</tr>
         	</thead>
         		
@@ -27,7 +29,13 @@
         		<tr th:each="contato : ${contatos}">
 					<td th:text="${contato.nome}">Nome</td>
 					<td th:text="${contato.email}">E-mail</td>
-					<td th:text="${contato.telefone}">Telefone</td>        		
+					<td th:text="${contato.telefone}">Telefone</td>
+					<td th:text="${contato.ativo}">Ativo</td>
+					<td>
+						<div>Visualizar</div>
+						<div>Editar</div>
+						<div>Remover</div>
+					</td>
         		</tr>
         	</tbody>
         

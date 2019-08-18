@@ -18,7 +18,7 @@ public class Contato {
 	private Integer id;
 	
 	@Column(name = "ativo")
-	private boolean ativo;
+	private boolean ativo = true;
 	
 	@Column(name = "nome")
 	private String nome;
@@ -59,6 +59,14 @@ public class Contato {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
 	}
 
 }
