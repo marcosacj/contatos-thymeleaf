@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.jsf.model.Contato;
 import com.jsf.repository.ContatoRepository;
+import com.jsf.service.ContatoService;
 
 @Controller
 @RequestMapping("contatos")
@@ -21,6 +22,9 @@ public class ContatoController {
 	
 	@Autowired
 	private ContatoRepository contatoRepository;
+	
+	@Autowired
+	private ContatoService contatoService;
 	
 	@GetMapping("cadastrar")
 	public String cadastrar(Model model) {
@@ -63,6 +67,17 @@ public class ContatoController {
 		mv.addObject("contato", contato);
 		
 		return mv;
+		
+	}
+	
+	@GetMapping("desativar/{id}")
+	public String desativar(@PathVariable Integer id) {
+		
+		Contato contato = contatoRepository.findById(id);
+		
+		contatoService.desativar(contato);
+		
+		return "redirect:/contatos/listar";
 		
 	}
 
