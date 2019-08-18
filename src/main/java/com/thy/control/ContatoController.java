@@ -37,7 +37,7 @@ public class ContatoController {
 		
 	}
 	
-	@GetMapping("listar")
+	@GetMapping(value = { "", "/", "listar" })
 	public String listar(Model model) {
 		
 		List<Contato> contatos = (List<Contato>) contatoRepository.findAll();
