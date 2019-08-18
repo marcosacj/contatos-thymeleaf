@@ -1,4 +1,4 @@
-package com.jsf.model;
+package com.thy.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

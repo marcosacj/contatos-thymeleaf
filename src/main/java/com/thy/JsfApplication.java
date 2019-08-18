@@ -1,4 +1,4 @@
-package com.jsf;
+package com.thy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

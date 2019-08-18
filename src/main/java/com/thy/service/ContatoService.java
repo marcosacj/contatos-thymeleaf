@@ -1,10 +1,10 @@
-package com.jsf.service;
+package com.thy.service;
 
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
-import com.jsf.model.Contato;
+import com.thy.model.Contato;
 
 @Service
 public class ContatoService {

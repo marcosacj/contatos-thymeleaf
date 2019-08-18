@@ -1,4 +1,4 @@
-package com.jsf.control;
+package com.thy.control;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.jsf.model.Contato;
-import com.jsf.repository.ContatoRepository;
-import com.jsf.service.ContatoService;
+import com.thy.model.Contato;
+import com.thy.repository.ContatoRepository;
+import com.thy.service.ContatoService;
 
 @Controller
 @RequestMapping("contatos")
