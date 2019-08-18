@@ -13,8 +13,10 @@
     
         <h1>Contatos - Cadastrar</h1>
         
-        <form method="post" th:action="@{novo}" th:object="${contato}">
+        <form method="post" th:action="@{/contatos/novo}" th:object="${contato}">
         
+        	<input type="hidden" th:field="*{id}"><br>
+        	
         	<label for="nome">Nome</label>
         	<input type="text" name="nome" th:field="*{nome}"><br>
         	

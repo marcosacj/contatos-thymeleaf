@@ -7,8 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jsf.model.Contato;
 import com.jsf.repository.ContatoRepository;
@@ -48,6 +50,19 @@ public class ContatoController {
 		contatoRepository.save(contato);
 		
 		return "redirect:listar";
+		
+	}
+	
+	@GetMapping("editar/{id}")
+	public ModelAndView editar(@PathVariable Integer id) {
+		
+		ModelAndView mv = new ModelAndView("contato/cadastrar");
+		
+		Contato contato = contatoRepository.findById(id);
+		
+		mv.addObject("contato", contato);
+		
+		return mv;
 		
 	}
 
