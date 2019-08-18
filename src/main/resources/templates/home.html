@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Home page</title>
         <meta charset="UTF-8">
@@ -7,5 +7,8 @@
     </head>
     <body>
         <h1>Contatos - Home</h1>
+        
+        <a th:href="@{contatos/cadastrar}">Cadastrar</a>
+        <a th:href="@{contatos/listar}">Listar</a>
     </body>
 </html>
