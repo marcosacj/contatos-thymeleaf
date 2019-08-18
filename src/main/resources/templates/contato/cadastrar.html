@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
     <head>
+    
         <title>Home page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
     </head>
+    
     <body>
+    
         <h1>Contatos - Cadastrar</h1>
+        
+        <form method="post" th:action="@{novo}" th:object="${contato}">
+        
+        	<label for="nome">Nome</label>
+        	<input type="text" name="nome" th:field="*{nome}"><br>
+        	
+        	<label for="email">E-mail</label>
+        	<input type="text" name="email" th:field="*{email}"><br>
+        	
+        	<label for="telefone">Telefone</label>
+        	<input type="text" name="telefone" th:field="*{telefone}"><br>
+        	
+        	<button type="submit">Enviar</button>
+        	<button type="reset">Limpar</button>
+        	
+        </form>
+        
     </body>
+    
 </html>
