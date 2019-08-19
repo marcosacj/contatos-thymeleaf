@@ -20,6 +20,11 @@ public class ContatoService {
 	}
 	
 	@Transactional
+	public void ativar(Contato contato) {
+		contato.setAtivo(true);
+	}
+	
+	@Transactional
 	public void excluir(Contato contato) {
 		contatoRepository.delete(contato);
 	}
