@@ -3,7 +3,7 @@
 	
 	<head>
 		
-		<title>Home page</title>
+		<title>Cadastro</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
@@ -14,7 +14,7 @@
 	
 	<body>
 		
-		<h1>Contatos - Cadastrar</h1>
+		<div th:insert="fragments/default :: header"></div>
 		
 		<form method="post" th:action="@{/contatos/novo}" th:object="${contato}">
 		
