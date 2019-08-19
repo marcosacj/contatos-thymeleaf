@@ -16,35 +16,41 @@
 		
 		<div th:insert="fragments/default :: header"></div>
 		
-		<table>
-			
-			<thead>
-				<tr>
-					<td><b>#</b></td>
-					<td><b>Nome</b></td>
-					<td><b>E-mail</b></td>
-					<td><b>Telefone</b></td>
-					<td><b>Ativo</b></td>
-					<td><b>Opções</b></td>
-				</tr>
-			</thead>
-				
-			<tbody>
-				<tr th:each="contato : ${contatos}">
-					<td th:text="${contato.id}">#</td>
-					<td th:text="${contato.nome}">Nome</td>
-					<td th:text="${contato.email}">E-mail</td>
-					<td th:text="${contato.telefone}">Telefone</td>
-					<td th:text="${contato.ativo}">Ativo</td>
-					<td>
-						<a th:href="@{ 'editar/' + ${contato.id} }">Editar</a>
-						<a th:href="@{ 'desativar/' + ${contato.id} }" th:if="${contato.ativo}">Desativar</a>
-						<a th:href="@{ 'excluir/' + ${contato.id} }">Excluir</a>
-					</td>
-				</tr>
-			</tbody>
+		<div class="my-4"></div>
 		
-		</table>
+		<div class="container">
+		
+			<table class="table table-hover">
+				
+				<thead>
+					<tr>
+						<td><b>#</b></td>
+						<td><b>Nome</b></td>
+						<td><b>E-mail</b></td>
+						<td><b>Telefone</b></td>
+						<td><b>Ativo</b></td>
+						<td><b>Opções</b></td>
+					</tr>
+				</thead>
+					
+				<tbody>
+					<tr th:each="contato : ${contatos}">
+						<td th:text="${contato.id}">#</td>
+						<td th:text="${contato.nome}">Nome</td>
+						<td th:text="${contato.email}">E-mail</td>
+						<td th:text="${contato.telefone}">Telefone</td>
+						<td th:text="${contato.ativo}">Ativo</td>
+						<td>
+							<a th:href="@{ 'editar/' + ${contato.id} }">Editar</a>
+							<a th:href="@{ 'desativar/' + ${contato.id} }" th:if="${contato.ativo}">Desativar</a>
+							<a th:href="@{ 'excluir/' + ${contato.id} }">Excluir</a>
+						</td>
+					</tr>
+				</tbody>
+			
+			</table>
+		
+		</div>
 		
 	</body>
 	
