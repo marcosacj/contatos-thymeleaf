@@ -22,47 +22,51 @@
 		
 		<div class="container">
 		
-			<table class="table table-hover">
-				
-				<thead>
-					<tr>
-						<td><b>#</b></td>
-						<td><b>Nome</b></td>
-						<td><b>E-mail</b></td>
-						<td><b>Telefone</b></td>
-						<td><b>Ativo</b></td>
-						<td><b>Opções</b></td>
-					</tr>
-				</thead>
+			<div class="table-responsive">
+		
+				<table class="table table-hover">
 					
-				<tbody>
-					<tr th:each="contato : ${contatos}">
-						<td th:text="${contato.id}">#</td>
-						<td th:text="${contato.nome}">Nome</td>
-						<td th:text="${contato.email}">E-mail</td>
-						<td th:text="${contato.telefone}">Telefone</td>
-						<td>
-							<i class="fas fa-check" data-toggle="tooltip" title="Ativo" data-placement="top" th:if="${contato.ativo}"></i>
-							<i class="fas fa-times-circle" data-toggle="tooltip" title="Inativo" data-placement="top" th:if="${not contato.ativo}"></i>
-						</td>
-						<td>
-							<a class="mx-1" th:href="@{ 'editar/' + ${contato.id} }">
-								<i class="fas fa-user-edit" data-toggle="tooltip" title="Editar" data-placement="top"></i>
-							</a>
-							<a class="mx-1" th:href="@{ 'desativar/' + ${contato.id} }" th:if="${contato.ativo}">
-								<i class="fas fa-user-minus" data-toggle="tooltip" title="Desativar" data-placement="top"></i>
-							</a>
-							<a class="mx-1" th:href="@{ 'ativar/' + ${contato.id} }" th:if="${not contato.ativo}">
-								<i class="fas fa-user-plus" data-toggle="tooltip" title="Ativar" data-placement="top"></i>
-							</a>
-							<a class="mx-1" th:href="@{ 'excluir/' + ${contato.id} }">
-								<i class="fas fa-user-times" data-toggle="tooltip" title="Excluir" data-placement="top"></i>
-							</a>
-						</td>
-					</tr>
-				</tbody>
+					<thead>
+						<tr>
+							<td><b>#</b></td>
+							<td><b>Nome</b></td>
+							<td><b>E-mail</b></td>
+							<td><b>Telefone</b></td>
+							<td><b>Ativo</b></td>
+							<td><b>Opções</b></td>
+						</tr>
+					</thead>
+						
+					<tbody>
+						<tr th:each="contato : ${contatos}">
+							<td th:text="${contato.id}">#</td>
+							<td th:text="${contato.nome}">Nome</td>
+							<td th:text="${contato.email}">E-mail</td>
+							<td th:text="${contato.telefone}">Telefone</td>
+							<td>
+								<i class="fas fa-check" data-toggle="tooltip" title="Ativo" data-placement="top" th:if="${contato.ativo}"></i>
+								<i class="fas fa-times-circle" data-toggle="tooltip" title="Inativo" data-placement="top" th:if="${not contato.ativo}"></i>
+							</td>
+							<td>
+								<a class="mx-1" th:href="@{ 'editar/' + ${contato.id} }">
+									<i class="fas fa-user-edit" data-toggle="tooltip" title="Editar" data-placement="top"></i>
+								</a>
+								<a class="mx-1" th:href="@{ 'desativar/' + ${contato.id} }" th:if="${contato.ativo}">
+									<i class="fas fa-user-minus" data-toggle="tooltip" title="Desativar" data-placement="top"></i>
+								</a>
+								<a class="mx-1" th:href="@{ 'ativar/' + ${contato.id} }" th:if="${not contato.ativo}">
+									<i class="fas fa-user-plus" data-toggle="tooltip" title="Ativar" data-placement="top"></i>
+								</a>
+								<a class="mx-1" th:href="@{ 'excluir/' + ${contato.id} }">
+									<i class="fas fa-user-times" data-toggle="tooltip" title="Excluir" data-placement="top"></i>
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				
+				</table>
 			
-			</table>
+			</div>
 		
 		</div>
 		
