@@ -66,6 +66,8 @@ public class ContatoController {
 		
 		mv.addObject("contato", contato);
 		
+		mv.addObject("editando", true);
+		
 		return mv;
 		
 	}
